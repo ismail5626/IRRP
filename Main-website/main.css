@@ -1,0 +1,220 @@
+:root {
+    --primary: #ff5733;
+    --secondary: #33ff57;
+    --background-light: #f4f1de;
+    --background-dark: #3a3a3a;
+    --accent: #ffcc00;
+    --shadow: rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #ff5733, #ffcc00, #33ff57);
+    background-size: 300% 300%;
+    animation: backgroundShift 7s infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    color: white;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 4px 4px var(--shadow);
+    animation: shakeTitle 2s infinite alternate;
+}
+
+@keyframes shakeTitle {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin: 20px 0;
+}
+
+.adventure-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: var(--accent);
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.adventure-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.04s ease-out;
+}
+
+.adventure-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 25px var(--shadow);
+}
+
+.adventure-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.floating-chest {
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    transform: translateX(50%);
+    animation: floatChest 5s ease-in-out infinite;
+}
+
+.floating-chest img {
+    width: 120px;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 0, 0.7));
+    transition: transform 0.5s ease;
+}
+
+.floating-chest:hover img {
+    transform: scale(1.2);
+}
+
+@keyframes floatChest {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.modal-overlay.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-content {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Footer Container */
+.marker-footer {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(0, 0, 0, 0.8); /* Slightly dark background to match the theme */
+    color: white;
+    padding: 15px 20px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 998;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Fade-in effect for footer */
+.marker-footer.fade-in {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Footer Content: Aligns everything nicely in the footer */
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Dropdown Styling */
+#marker-site-select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background: var(--background-dark); /* Background that blends with theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#marker-site-select:hover {
+    background-color: var(--primary); /* Slightly brighter on hover */
+}
+
+/* Video Player Styling */
+.footer-video {
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6); /* Subtle glow effect to match theme */
+}
+
+/* Utility to hide elements */
+.hidden {
+    display: none;
+}

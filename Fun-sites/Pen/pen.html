@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Penalty Shootout - Human Keeper</title>
+  <link rel="stylesheet" href="/Adventure-game/Fun-sites/Pen/css/pen.css">
+</head>
+<body>
+
+<div class="game-container">
+  <div class="fans"></div>
+
+  <h1>Penalty Shootout!</h1>
+
+  <!-- Difficulty Level Selector -->
+  <div>
+    <label for="difficulty">Choose Difficulty: </label>
+    <select id="difficulty" onchange="changeDifficulty()">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+
+  <div class="goal" id="goal">
+    <div class="goalkeeper" id="goalkeeper">
+      <div class="head"></div>
+      <div class="body"></div>
+      <div class="arms-left"></div>
+      <div class="arms-right"></div>
+      <div class="legs"></div>
+    </div>
+    <div class="ball" id="ball"></div>
+  </div>
+
+  <div class="aim-bar" id="aimBar" onclick="aimAndShoot(event)"></div>
+
+  <div class="result" id="result"></div>
+  <div class="score" id="score">Score: 0 Goals out of 0 Shots</div>
+  <div class="best-score" id="bestScore">Best Score: 0/5</div>
+  <div class="game-over hidden" id="gameOver"></div>
+  <button class="button hidden" id="resetButton" onclick="resetGame()">Play Again</button>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+</div>
+
+<script src="/Adventure-game/Fun-sites/Pen/js/pen.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

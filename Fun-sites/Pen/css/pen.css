@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #6ab04c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  text-align: center;
+  position: relative;
+}
+
+.fans {
+  width: 100%;
+  height: 150px;
+  background: repeating-linear-gradient(
+    45deg,
+    #273c75,
+    #273c75 10px,
+    #e84118 10px,
+    #e84118 20px
+  );
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  animation: wave 2s infinite alternate ease-in-out;
+  border-bottom: 5px solid #2f3640;
+}
+
+@keyframes wave {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+.goal {
+  width: 300px;
+  height: 150px;
+  background: #f5f6fa;
+  border: 5px solid #2f3640;
+  margin: 20px auto 10px auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.goalkeeper {
+  width: 50px;
+  height: 120px;
+  position: absolute;
+  bottom: 20px;
+  left: 125px;
+  z-index: 2;
+}
+
+.goalkeeper .head {
+  width: 30px;
+  height: 30px;
+  background-color: #f1c40f;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+
+.goalkeeper .body {
+  width: 40px;
+  height: 60px;
+  background-color: #2c3e50;
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  border-radius: 10px;
+}
+
+.goalkeeper .arms {
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  width: 40px;
+  height: 15px;
+  background-color: #2c3e50;
+}
+
+.goalkeeper .arms-left {
+  position: absolute;
+  left: -20px;
+  top: 40px;
+  width: 20px;
+  height: 10px;
+  background-color: #2c3e50;
+  transform: rotate(-30deg);
+  z-index: 1;
+}
+
+.goalkeeper .arms-right {
+  position: absolute;
+  right: -20px;
+  top: 40px;
+  width: 20px;
+  height: 10px;
+  background-color: #2c3e50;
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+.goalkeeper .legs {
+  width: 40px;
+  height: 30px;
+  background-color: #34495e;
+  position: absolute;
+  top: 90px;
+  left: 5px;
+  border-radius: 10px;
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle closest-side, white 92%, black 93%, black 100%) center/50%;
+  position: absolute;
+  bottom: -40px;
+  left: 135px;
+  border-radius: 50%;
+  transition: all 0.6s ease;
+}
+
+.aim-bar {
+  width: 300px;
+  height: 20px;
+  background: #dcdde1;
+  border: 2px solid #2f3640;
+  margin: 10px auto;
+  border-radius: 10px;
+  position: relative;
+  cursor: crosshair;
+  z-index: 2;
+}
+
+.result, .score, .game-over, .best-score {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 2;
+  position: relative;
+}
+
+.score {
+  font-size: 20px;
+  color: #2f3640;
+}
+
+.best-score {
+  font-size: 18px;
+  color: #192a56;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #40739e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+}
+
+/* Difficulty dropdown styling */
+#difficulty {
+  font-size: 18px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+/* Confetti Canvas */
+#confettiCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}

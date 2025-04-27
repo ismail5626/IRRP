@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro's Football Quiz</title>
+    <link rel="stylesheet" href="/Adventure-game/Fun-sites/quizz/css/quizz.css">
+</head>
+<body>
+
+    <h1>Pedro's Football Quiz</h1>
+
+    <div class="quiz-container" id="quiz-container">
+        <div id="question-1" class="question">
+            <p>1. Which football club is known as 'The Red Devils'?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q1" value="a"> Arsenal</li>
+                <li><input type="radio" name="q1" value="b"> Manchester United</li>
+                <li><input type="radio" name="q1" value="c"> Liverpool</li>
+                <li><input type="radio" name="q1" value="d"> Chelsea</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(1)">Next</button>
+        </div>
+
+        <div id="question-2" class="question">
+            <p>2. Which club is known as 'Los Blancos'?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q2" value="a"> Barcelona</li>
+                <li><input type="radio" name="q2" value="b"> Real Madrid</li>
+                <li><input type="radio" name="q2" value="c"> Bayern Munich</li>
+                <li><input type="radio" name="q2" value="d"> Paris Saint-Germain</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(2)">Next</button>
+        </div>
+
+        <div id="question-3" class="question">
+            <p>3. Which football club is nicknamed 'The Gunners'?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q3" value="a"> Arsenal</li>
+                <li><input type="radio" name="q3" value="b"> Manchester City</li>
+                <li><input type="radio" name="q3" value="c"> Tottenham Hotspur</li>
+                <li><input type="radio" name="q3" value="d"> Liverpool</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(3)">Next</button>
+        </div>
+
+        <div id="question-4" class="question">
+            <p>4. Which club did Zlatan Ibrahimovic join in 2016?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q4" value="a"> Barcelona</li>
+                <li><input type="radio" name="q4" value="b"> Manchester United</li>
+                <li><input type="radio" name="q4" value="c"> PSG</li>
+                <li><input type="radio" name="q4" value="d"> Milan</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(4)">Next</button>
+        </div>
+
+        <div id="question-5" class="question">
+            <p>5. Which club is known as 'The Blues'?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q5" value="a"> Chelsea</li>
+                <li><input type="radio" name="q5" value="b"> Everton</li>
+                <li><input type="radio" name="q5" value="c"> Manchester City</li>
+                <li><input type="radio" name="q5" value="d"> Leicester City</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(5)">Next</button>
+        </div>
+
+        <div id="question-6" class="question">
+            <p>6. What is the home stadium of FC Barcelona?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q6" value="a"> Santiago Bernabéu</li>
+                <li><input type="radio" name="q6" value="b"> Camp Nou</li>
+                <li><input type="radio" name="q6" value="c"> Old Trafford</li>
+                <li><input type="radio" name="q6" value="d"> Allianz Arena</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(6)">Next</button>
+        </div>
+
+        <div id="question-7" class="question">
+            <p>7. Which club is known as 'The Citizens'?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q7" value="a"> Manchester United</li>
+                <li><input type="radio" name="q7" value="b"> Manchester City</li>
+                <li><input type="radio" name="q7" value="c"> Liverpool</li>
+                <li><input type="radio" name="q7" value="d"> Arsenal</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(7)">Next</button>
+        </div>
+
+        <div id="question-8" class="question">
+            <p>8. Which club did Cristiano Ronaldo join in 2021?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q8" value="a"> Juventus</li>
+                <li><input type="radio" name="q8" value="b"> Real Madrid</li>
+                <li><input type="radio" name="q8" value="c"> Manchester United</li>
+                <li><input type="radio" name="q8" value="d"> PSG</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(8)">Next</button>
+        </div>
+
+        <div id="question-9" class="question">
+            <p>9. What is the home stadium of Bayern Munich?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q9" value="a"> Ibrox</li>
+                <li><input type="radio" name="q9" value="b"> Signal Iduna Park</li>
+                <li><input type="radio" name="q9" value="c"> Stamford Bridge</li>
+                <li><input type="radio" name="q9" value="d"> Allianz Areana</li>
+            </ul>
+            <button class="next-btn" onclick="nextQuestion(9)">Next</button>
+        </div>
+
+        <div id="question-10" class="question">
+            <p>10. Which club has the nickname 'The Special One'?</p>
+            <ul class="answers">
+                <li><input type="radio" name="q10" value="a"> Chelsea</li>
+                <li><input type="radio" name="q10" value="b"> Inter Milan</li>
+                <li><input type="radio" name="q10" value="c"> Manchester United</li>
+                <li><input type="radio" name="q10" value="d"> Real Madrid</li>
+            </ul>
+            <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </div>
+
+        <div id="result" class="result"></div>
+        <button class="submit-btn restart-btn" onclick="restartQuiz()">Reset</button>
+    </div>
+
+    <script src="/Adventure-game/Fun-sites/quizz/js/quizz.js"></script>
+</body>
+</html>

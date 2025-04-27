@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Generate hilarious dad jokes with our AI-powered joke generator. Daily updated collection of tech and classic dad jokes.">
+    <meta name="theme-color" content="#FFF5F5">
+    <title>Dad Jokes Generator | Daily Chuckles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/dad-joke.css" media="all">
+    <script defer src="js/dad-joke.js" crossorigin="anonymous"></script>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebApplication">
+
+    <header class="header-container" role="banner">
+        <div class="header-content">
+            <h1 class="header" id="joke-title">
+                <span role="img" aria-label="Laughing emoji">😂</span>
+                <span class="gradient-text">Dad Joke Generator</span>
+            </h1>
+            <p id="joke-description" class="subheader">Click the button below for some top-tier dad humor!</p>
+        </div>
+    </header>
+
+    <nav class="theme-selector" role="navigation" aria-label="Joke category selection">
+        <div class="select-wrapper">
+            <label for="theme" class="sr-only">Choose Joke Category</label>
+            <select id="theme" name="theme" class="theme-dropdown" aria-describedby="theme-description">
+                <option value="dad">Dad Jokes</option>
+                <option value="tech">Tech Jokes</option>
+            </select>
+            <span id="theme-description" hidden>Select your preferred joke category</span>
+        </div>
+    </nav>
+
+    <main id="main-content" class="main-content" role="main">
+        <section id="joke-section" class="joke-card" aria-live="polite">
+            <div class="joke-content">
+                <p id="joke" class="joke-text">Loading joke...</p>
+                <div id="loader" class="loader hidden" role="status" aria-label="Loading"></div>
+                <div class="button-group" role="group" aria-label="Joke actions">
+                    <button id="new-joke-btn" class="primary-btn" type="button">
+                        <span aria-hidden="true">🎉</span> New Joke
+                    </button>
+                    <button id="copy-btn" class="icon-btn" type="button" aria-label="Copy joke to clipboard">
+                        <span class="icon" aria-hidden="true">📋</span>
+                        <span class="sr-only">Copy Joke</span>
+                    </button>
+                    <button id="share-btn" class="icon-btn" type="button" aria-label="Share joke on Twitter">
+                        <span class="icon" aria-hidden="true">📢</span>
+                        <span class="sr-only">Share on Twitter</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="dark-mode-toggle" class="dark-mode-toggle" type="button"
+        aria-pressed="false" role="switch" aria-label="Toggle dark mode">
+        <svg class="dark-icon" aria-hidden="true">...</svg>
+        <svg class="light-icon" aria-hidden="true">...</svg>
+    </button>
+
+    <footer class="site-footer" role="contentinfo">
+        <p class="footer-text">&copy; <span id="current-year">2025</span> Adventure Game Fun Sites
+            <span aria-hidden="true">|</span> <span class="sr-only">-</span>
+            <a href="/Adventure-game/Other-pages/Privacy-policy/Privacy-policy.html" class="footer-link">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <div id="status-message" class="status-message" role="alert" aria-atomic="true"></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cursed Captcha</title>
+  <!-- linking to external CSS file for styling -->
+  <link rel="stylesheet" href="css/cursed-captcha.css" />
+</head>
+<body>
+<!-- the main container that holds everything on the page -->
+  <div class="container">
+    <h1>Cursed Captcha</h1>
+    <!-- Displays the current task like a math question or instruction -->
+    <div id="task-box" class="box"></div>
+    <!-- This is where the images will be shown (for the image captcha game) -->
+    <div id="image-container" class="image-grid"></div>
+    <!-- Text input field for answering text based captchas -->
+    <input type="text" id="input-box" placeholder="Enter the characters shown" />
+	<!-- This will show random taunts -->
+    <div id="taunts-box" class="taunts"></div>
+	<!-- Group of buttons the user can click to submit or try a new challenge -->
+    <div class="button-group">
+      <button id="submit-button" onclick="submitCaptcha()">Submit</button>
+      <button id="try-again-button" onclick="tryAnotherCaptcha()">Try Another</button>
+	  <!-- link to the home page -->
+      <a href="/Adventure-game/Main-website/index.html"><button>Home</button></a>
+    </div>
+  </div>
+
+  <script src="js/cursed-captcha.js"></script>
+</body>
+</html>

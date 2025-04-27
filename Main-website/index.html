@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Awaits</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">DO NOT PRESS THIS BUTTON!</h1>
+        <p class="subtitle">Seriously, you don’t want to know what happens next...</p>
+        <button id="adventure-button" class="adventure-btn">IGNORE ME</button>
+    </div>
+
+    <!-- Floating Chest -->
+    <div class="floating-chest">
+        <img src="../assets/chest.png" alt="Mysterious Chest">
+    </div>
+
+    <!-- Marker Mode Modal -->
+    <div id="marker-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>Are you a Marker or Lecturer?</h2>
+            <p>Enabling Marker Mode will display helpful tools to let you easily explore all project pages and view our group video.</p>
+            <div class="modal-buttons">
+                <button id="marker-yes">Yes, enable Marker Mode</button>
+                <button id="marker-no">No, continue normally</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marker Mode Footer -->
+    <footer id="marker-footer" class="marker-footer hidden">
+        <div class="footer-content">
+            <label for="marker-site-select">Quick Navigate:</label>
+            <select id="marker-site-select">
+                <option value="">-- Choose a page --</option>
+                <option value="../Fun-sites/dad-joke/dad-joke.html">Dad Joke (Ismail)</option>
+                <option value="../Fun-sites/cursed-captcha/cursed-captcha.html">Cursed Captcha (Ronan)</option>
+                <option value="../Fun-sites/horrible-therapist/horrible-therapist.html">Horrible Therapist (Ronan)</option>
+                <option value="../Fun-sites/quizz/quizz.html">Football Quiz (Peter)</option>
+                <option value="../Fun-sites/Pen/pen.html">Pen (Peter)</option>
+                <option value="../Fun-sites/tictactoe/tictactoe.html">Tic Tac Toe (Rodi)</option>
+                <option value="../Fun-sites/quiz/quiz.html">Cyber Quiz (Rodi)</option>
+            </select>
+
+            <!-- Embedded YouTube Video -->
+            <div class="footer-video">
+                <iframe
+                    width="300"
+                    height="169"
+                    src="https://www.youtube.com/embed/iy13E-7sbnI"
+                    title="Group Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    style="border: none;">
+                </iframe>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

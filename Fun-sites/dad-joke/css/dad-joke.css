@@ -1,0 +1,291 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #ff7ab8, #ff758c);
+  --secondary-gradient: linear-gradient(135deg, #fdc6a1, #f9b5b5);
+  --surface-light: rgba(255, 255, 255, 0.9);
+  --surface-dark: rgba(0, 0, 0, 0.8);
+  --shadow-primary: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 8px 32px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --accent-color: #ff758c; /* Used for highlights */
+  --hover-accent-color: #ff7ab8; /* Hover color for buttons and links */
+  --toggle-dark-color: #333333; /* Darker background for dark mode toggle */
+  --toggle-light-color: #e4e4e4; /* Lighter background for toggle when off */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fff5f5, #ffe5e6);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  transition: background 0.6s var(--transition-timing), color 0.3s ease;
+  margin: 0;
+}
+
+.dark-mode {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  color: var(--text-light);
+}
+
+#joke-section {
+  background: var(--surface-light);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow-primary);
+  max-width: 680px;
+  margin: 2rem;
+  transition: all 0.4s var(--transition-timing);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #joke-section {
+  background: var(--surface-dark);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-dark); /* Adjusted for dark mode */
+}
+
+button {
+  background: var(--primary-gradient);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-timing);
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(255, 117, 140, 0.3);
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 117, 140, 0.4);
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Dark mode toggle */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--toggle-light-color); /* Light background for the toggle when off */
+  border-radius: 35px; /* Rounded shape */
+  width: 1px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-primary);
+  transition: background-color 0.5s ease, transform 0.5s ease; /* Smooth background change and animation */
+  cursor: pointer;
+  transform: scale(1); /* Default scale */
+}
+
+/* When dark mode is active, change the background color */
+.dark-mode .dark-mode-toggle {
+  background-color: #4cd964; /* Green color for "on" state */
+  transform: scale(1.1); /* Scale up the toggle to make it more prominent */
+}
+
+/* Circle inside the toggle */
+.dark-mode-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5px; /* Initial left position */
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  background-color: white; /* White circle */
+  border-radius: 50%; /* Ensures the circle is round */
+  transition: left 0.5s ease; /* Smooth sliding transition */
+}
+
+/* Move the circle to the right when dark mode is on */
+.dark-mode .dark-mode-toggle::before {
+  left: 30px; /* Moves the circle to the right side */
+}
+
+/* Use moon and sun emojis for toggle visual state */
+.dark-mode-toggle .icon {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  transition: opacity 0.3s ease;
+  position: absolute;
+}
+
+/* Sun emoji for light mode */
+.dark-mode-toggle .sun {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Moon emoji for dark mode */
+.dark-mode-toggle .moon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* When dark mode is on, show moon emoji and hide sun emoji */
+.dark-mode .dark-mode-toggle .sun {
+  opacity: 0;
+}
+
+.dark-mode .dark-mode-toggle .moon {
+  opacity: 1;
+}
+
+#loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  margin: 2rem auto;
+}
+
+#loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid #ff758c;
+  border-bottom-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+
+.joke-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 2rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s var(--transition-timing) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+}
+
+@media (max-width: 768px) {
+  #joke-section {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 20px;
+  }
+
+  .header {
+    font-size: 2rem;
+  }
+
+  button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Improved alignment and styling for the "Your Joke" textarea */
+textarea {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  resize: none; /* Disable resizing to maintain a consistent layout */
+}
+
+textarea:focus {
+  outline: none;
+  background: var(--surface-light);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(255, 117, 140, 0.4);
+}
+
+/* Adjust the "Choose Joke" dropdown menu */
+select {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  color: var(--text-dark);
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  background-color: var(--surface-light);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(255, 117, 140, 0.4);
+}
+
+select option {
+  background-color: #fff;
+  color: var(--text-dark);
+}

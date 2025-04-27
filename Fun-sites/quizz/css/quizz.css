@@ -1,0 +1,89 @@
+body {
+    background-color: #2e7d32;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00;
+    margin-top: 50px;
+    font-size: 3em;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.quiz-container {
+    width: 70%;
+    margin: 50px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.question {
+    margin-bottom: 30px;
+    display: none;
+}
+
+.answers {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.answers li {
+    margin: 15px 0;
+}
+
+.answers input {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.next-btn, .submit-btn {
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.next-btn:hover, .submit-btn:hover {
+    background-color: #ff9900;
+}
+
+.next-btn {
+    background-image: url('https://img.icons8.com/ios/452/next-page.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 40px;
+}
+
+.submit-btn {
+    background-image: url('https://img.icons8.com/ios/452/checkmark.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 40px;
+}
+
+.result {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.5em;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.restart-btn {
+    display: none;
+    margin-top: 20px;
+}
