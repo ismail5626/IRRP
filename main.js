@@ -4,7 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // ✅ Reset button appearance on page load
     button.innerText = "Don't Click Me";
     button.style.background = "";
-
+    window.addEventListener("pageshow", () => {
+    const button = document.getElementById("adventure-button");
+    if (button) {
+        button.innerText = "Don't Click Me";
+        button.style.background = ""; // e.g., "#4CAF50" or your preferred default
+    }
+});
+    
     // Create the audio object
     const buttonSound = new Audio("./Audio/Button_Click.mp3");
 
