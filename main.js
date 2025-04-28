@@ -1,22 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("adventure-button");
 
+    // ✅ Reset button appearance on page load
+    button.innerText = "Don't Click Me";
+    button.style.background = "";
+
     // Create the audio object
     const buttonSound = new Audio("./Audio/Button_Click.mp3");
 
     button.addEventListener("click", () => {
         buttonSound.play();
 
-       const funSites = [
-    "Fun-sites/dad-joke/dad-joke.html",         
-    "Fun-sites/cursed-captcha/cursed-captcha.html",    
-    "Fun-sites/horrible-therapist/horrible-therapist.html",
-    "Fun-sites/quizz/quizz.html",
-    "Fun-sites/Pen/pen.html",
-    "Fun-sites/tictactoe/tictactoe.html",             
-    "Fun-sites/quiz/quiz.html"                        
-];
-
+        const funSites = [
+            "Fun-sites/dad-joke/dad-joke.html",         
+            "Fun-sites/cursed-captcha/cursed-captcha.html",    
+            "Fun-sites/horrible-therapist/horrible-therapist.html",
+            "Fun-sites/quizz/quizz.html",
+            "Fun-sites/Pen/pen.html",
+            "Fun-sites/tictactoe/tictactoe.html",             
+            "Fun-sites/quiz/quiz.html"                        
+        ];
 
         const randomSite = funSites[Math.floor(Math.random() * funSites.length)];
 
