@@ -7,15 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
         buttonSound.play();
 
-        const funSites = [
-            "/IRRP/Fun-sites/dad-joke/dad-joke.html",         
-            "/IRRP/Fun-sites/cursed-captcha/cursed-captcha.html",    
-            "/IRRP/Fun-sites/horrible-therapist/horrible-therapist.html",
-            "/IRRP/Fun-sites/quizz/quizz.html",
-            "/IRRP/Fun-sites/Pen/pen.html",
-            "/IRRP/Fun-sites/tictactoe/tictactoe.html",             
-            "/IRRP/Fun-sites/quiz/quiz.html"                        
-        ];
+       const funSites = [
+    "Fun-sites/dad-joke/dad-joke.html",         
+    "Fun-sites/cursed-captcha/cursed-captcha.html",    
+    "Fun-sites/horrible-therapist/horrible-therapist.html",
+    "Fun-sites/quizz/quizz.html",
+    "Fun-sites/Pen/pen.html",
+    "Fun-sites/tictactoe/tictactoe.html",             
+    "Fun-sites/quiz/quiz.html"                        
+];
+
 
         const randomSite = funSites[Math.floor(Math.random() * funSites.length)];
 
