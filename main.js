@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
         buttonSound.play();
 
         const funSites = [
-            "dad-joke/dad-joke.html",                // Adjusted for root folder
-            "cursed-captcha/cursed-captcha.html",    // Adjusted for root folder
-            "horrible-therapist/horrible-therapist.html",
-            "quizz/quizz.html",
-            "Pen/pen.html",
-            "tictactoe/tictactoe.html",             
-            "quiz/quiz.html"                        
+            "../Fun-sites/dad-joke/dad-joke.html",         
+            "../Fun-sites/cursed-captcha/cursed-captcha.html",    
+            "../Fun-sites/horrible-therapist/horrible-therapist.html",
+            "../Fun-sites/quizz/quizz.html",
+            "../Fun-sites/Pen/pen.html",
+            "../Fun-sites/tictactoe/tictactoe.html",             
+            "../Fun-sites/quiz/quiz.html"                        
         ];
 
         const randomSite = funSites[Math.floor(Math.random() * funSites.length)];
